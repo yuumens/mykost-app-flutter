@@ -1,7 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:my_kost_app/views/screens/home_page.dart';
+import 'package:my_kost_app/views/widget/navigation.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
@@ -9,7 +9,7 @@ class SplashScreen extends StatelessWidget {
     Future.delayed(Duration(seconds: 2), () {
       // Navigasikan pengguna ke halaman utama setelah 2 detik (ganti sesuai kebutuhan Anda)
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => HomePage()),
+        MaterialPageRoute(builder: (context) => Navbar()),
       );
     });
     return Scaffold(

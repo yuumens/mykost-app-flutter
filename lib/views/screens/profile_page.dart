@@ -1,13 +1,15 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:my_kost_app/views/widget/home_card.dart';
+import 'package:my_kost_app/views/widget/home_card_slider.dart';
 
-class MyWidget extends StatefulWidget {
+class ProfilePage extends StatefulWidget {
   @override
-  State<MyWidget> createState() => _MyWidgetState();
+  State<ProfilePage> createState() => _ProfilePageState();
 }
 
-class _MyWidgetState extends State<MyWidget> {
+class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
