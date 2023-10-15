@@ -1,21 +1,39 @@
-// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors
+// ignore_for_file: prefer_const_constructors, use_key_in_widget_constructors, prefer_const_constructors_in_immutables
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
-class HomeSlider extends StatefulWidget {
+class HomeSlider extends StatelessWidget {
+  final List<String> assets;
+  final int currentIndex;
+  final Function(int) onIndexChanged;
+
+  HomeSlider({
+    required this.assets,
+    required this.currentIndex,
+    required this.onIndexChanged,
+  });
+
   @override
-  State<HomeSlider> createState() => _HomeSliderState();
+  Widget build(BuildContext context) {
+    return CardSlider(
+        onIndexChanged: onIndexChanged,
+        assets: assets,
+        currentIndex: currentIndex);
+  }
 }
 
-class _HomeSliderState extends State<HomeSlider> {
-  List<String> assets = [
-    'assets/img/image10.png',
-    'assets/img/image11.png',
-    'assets/img/image12.png',
-  ];
+class CardSlider extends StatelessWidget {
+  const CardSlider({
+    super.key,
+    required this.onIndexChanged,
+    required this.assets,
+    required this.currentIndex,
+  });
 
-  int _currentIndex = 0;
+  final Function(int p1) onIndexChanged;
+  final List<String> assets;
+  final int currentIndex;
 
   @override
   Widget build(BuildContext context) {
@@ -27,9 +45,7 @@ class _HomeSliderState extends State<HomeSlider> {
             enlargeCenterPage: true,
             enableInfiniteScroll: true,
             onPageChanged: (index, reason) {
-              setState(() {
-                _currentIndex = index;
-              });
+              onIndexChanged(index);
             },
             viewportFraction: 0.8,
             aspectRatio: 2.0,
@@ -56,7 +72,7 @@ class _HomeSliderState extends State<HomeSlider> {
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 2),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: _currentIndex == index
+                color: currentIndex == index
                     ? Color(0xFFE5BA73)
                     : Color(0xFFF5EFE6),
               ),
