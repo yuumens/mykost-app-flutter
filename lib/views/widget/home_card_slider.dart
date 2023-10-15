@@ -51,8 +51,8 @@ class _HomeSliderState extends State<HomeSlider> {
           children: assets.map((asset) {
             int index = assets.indexOf(asset);
             return Container(
-              width: 8.0,
-              height: 8.0,
+              width: 10.0,
+              height: 9.0,
               margin: EdgeInsets.symmetric(vertical: 10, horizontal: 2),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,

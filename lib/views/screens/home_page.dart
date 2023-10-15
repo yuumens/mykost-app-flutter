@@ -1,6 +1,9 @@
-// ignore_for_file: use_key_in_widget_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:iconly/iconly.dart';
+import 'package:my_kost_app/views/widget/home_card.dart';
 import 'package:my_kost_app/views/widget/home_card_slider.dart';
 
 class HomePage extends StatefulWidget {
@@ -12,11 +15,329 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [Text('HomePage'), HomeSlider()],
-        ),
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                SizedBox(height: 45),
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Welcome Back',
+                            style: TextStyle(
+                              fontFamily: 'Plus Jakarta Sans',
+                              fontSize: 24,
+                              fontWeight: FontWeight.w800,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 45,
+                          ),
+                          Icon(
+                            IconlyBold.heart,
+                            color: Color(0xFFC58940),
+                            size: 30.0,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Icon(
+                            Icons.message,
+                            color: Color(0xFFC58940),
+                            size: 30.0,
+                          ),
+                          SizedBox(
+                            width: 10,
+                          ),
+                          Image(
+                            image: AssetImage('assets/img/Ellipse1.png'),
+                          ),
+                        ],
+                      ),
+                      Text(
+                        "Ahmad Rizky",
+                        style: TextStyle(
+                          fontFamily: 'Plus Jakarta Sans',
+                          fontSize: 14,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 30,
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "What Boarding House You\nLooking?",
+                    style: TextStyle(
+                      fontFamily: 'Plus Jakarta Sans',
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Column(
+                children: [
+                  TextField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color.fromARGB(255, 244, 229, 205),
+                      prefixIcon: Icon(
+                        Icons.search,
+                        color: Color.fromARGB(255, 115, 114, 113),
+                      ),
+                      hintText: 'Search Boarding House',
+                      hintStyle: TextStyle(
+                        fontFamily: 'Plus Jakarta Sans',
+                        fontSize: 12,
+                        color: Color(0xFFA0A0A0),
+                      ),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 20),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20.0),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 20,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: HomeSlider(), // Ganti dengan widget HomeSlider Anda
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 30,
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Recommended For You",
+                    style: TextStyle(
+                      fontFamily: 'Plus Jakarta Sans',
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Row(
+                    children: [
+                      Text(
+                        "See More",
+                        style: TextStyle(
+                          fontFamily: 'Plus Jakarta Sans',
+                          fontSize: 12,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Icon(
+                        IconlyLight.arrow_right_2,
+                        color: Color(0xFFE5BA73),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: SizedBox(
+              height: 10,
+            ),
+          ),
+          SliverToBoxAdapter(child: HomeCard()),
+        ],
+        // child: Column(
+        //   children: [
+        //     SizedBox(
+        //       height: MediaQuery.of(context).padding.top,
+        //     ),
+        //     Container(
+        //       padding: EdgeInsets.symmetric(horizontal: 20),
+        //       child: Column(
+        //         crossAxisAlignment: CrossAxisAlignment.start,
+        //         children: [
+        //           Row(
+        //             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //             children: [
+        //               Text(
+        //                 'Welcome Back',
+        //                 style: TextStyle(
+        //                   fontFamily: 'Plus Jakarta Sans',
+        //                   fontSize: 24,
+        //                   fontWeight: FontWeight.w800,
+        //                 ),
+        //               ),
+        //               SizedBox(
+        //                 width: 45,
+        //               ),
+        //               Icon(
+        //                 IconlyBold.heart,
+        //                 color: Color(0xFFC58940),
+        //                 size: 30.0,
+        //               ),
+        //               SizedBox(
+        //                 width: 10,
+        //               ),
+        //               Icon(
+        //                 Icons.message,
+        //                 color: Color(0xFFC58940),
+        //                 size: 30.0,
+        //               ),
+        //               SizedBox(
+        //                 width: 10,
+        //               ),
+        //               Image(
+        //                 image: AssetImage('assets/img/Ellipse1.png'),
+        //               ),
+        //             ],
+        //           ),
+        //           Text(
+        //             "Ahmad Rizky",
+        //             style: TextStyle(
+        //               fontFamily: 'Plus Jakarta Sans',
+        //               fontSize: 14,
+        //               fontWeight: FontWeight.w500,
+        //             ),
+        //           ),
+        //           SizedBox(
+        //             height: 30,
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //     Container(
+        //       padding: EdgeInsets.symmetric(
+        //         horizontal: 20,
+        //       ),
+        //       child: Column(
+        //         crossAxisAlignment: CrossAxisAlignment.start,
+        //         children: [
+        //           Text(
+        //             "What Boarding House You\nLooking?",
+        //             style: TextStyle(
+        //               fontFamily: 'Plus Jakarta Sans',
+        //               fontSize: 16,
+        //               fontWeight: FontWeight.w600,
+        //             ),
+        //           ),
+        //           SizedBox(
+        //             height: 15,
+        //           ),
+        //           TextField(
+        //             maxLines: 1,
+        //             decoration: InputDecoration(
+        //               filled: true,
+        //               fillColor: Color.fromARGB(255, 244, 229, 205),
+        //               prefixIcon: Icon(
+        //                 Icons.search,
+        //                 color: Color.fromARGB(255, 115, 114, 113),
+        //               ),
+        //               hintText: 'Search Boarding House',
+        //               hintStyle: TextStyle(
+        //                 fontFamily: 'Plus Jakarta Sans',
+        //                 fontSize: 12,
+        //                 color: Color(0xFFA0A0A0),
+        //               ),
+        //               contentPadding: EdgeInsets.symmetric(horizontal: 20),
+        //               border: OutlineInputBorder(
+        //                 borderRadius: BorderRadius.circular(20.0),
+        //                 borderSide: BorderSide.none,
+        //               ),
+        //             ),
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //     SizedBox(
+        //       height: 40,
+        //     ),
+        //     HomeSlider(),
+        //     SizedBox(
+        //       height: 30,
+        //     ),
+        //     Container(
+        //       padding: EdgeInsets.symmetric(
+        //         horizontal: 20,
+        //       ),
+        //       child: Row(
+        //         crossAxisAlignment: CrossAxisAlignment.start,
+        //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //         children: [
+        //           Text(
+        //             "Recommended For You",
+        //             style: TextStyle(
+        //               fontFamily: 'Plus Jakarta Sans',
+        //               fontSize: 16,
+        //               fontWeight: FontWeight.w600,
+        //             ),
+        //           ),
+        //           Row(
+        //             children: [
+        //               Text(
+        //                 "See More",
+        //                 style: TextStyle(
+        //                   fontFamily: 'Plus Jakarta Sans',
+        //                   fontSize: 12,
+        //                   fontWeight: FontWeight.w500,
+        //                 ),
+        //               ),
+        //               Icon(
+        //                 IconlyLight.arrow_right_2,
+        //                 color: Color(0xFFE5BA73),
+        //               ),
+        //             ],
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //     SizedBox(
+        //       height: 20,
+        //     ),
+        //     Container(
+        //       padding: EdgeInsets.symmetric(
+        //         horizontal: 10,
+        //       ),
+        //       child: Column(
+        //         children: [HomeCard()],
+        //       ),
+        //     ),
+        //   ],
+        // ),
       ),
     );
   }

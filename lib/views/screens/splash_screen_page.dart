@@ -1,7 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, avoid_unnecessary_containers, prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:my_kost_app/views/widget/navigation.dart';
+import 'package:my_kost_app/components/navigation.dart';
 
 class SplashScreen extends StatelessWidget {
   @override
