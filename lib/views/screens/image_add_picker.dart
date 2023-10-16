@@ -27,16 +27,29 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Image.file(
-                        imageFile,
-                        width: 200,
-                        height: 300,
-                      ),
-                      IconButton(
-                        icon: Icon(Icons.delete),
-                        onPressed: () {
-                          controller.removeImage(index);
-                        },
+                      Expanded(
+                        child: Container(
+                          padding: EdgeInsets.all(40),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.file(
+                                imageFile,
+                                width: 200,
+                                height: 300,
+                              ),
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor: Color(0xFFE5BA73),
+                                ),
+                                onPressed: () {
+                                  controller.removeImage(index);
+                                },
+                                child: Icon(Icons.delete),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -47,10 +60,14 @@ class _ImagePickerPageState extends State<ImagePickerPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFFFAEAB1),
         onPressed: () {
           controller.showImageSourceDialog();
         },
-        child: Icon(Icons.add),
+        child: Icon(
+          Icons.add,
+          color: Color(0xFFE5BA73),
+        ),
       ),
     );
   }

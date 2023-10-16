@@ -31,23 +31,50 @@ class ImageController extends GetxController {
   Future<void> showImageSourceDialog() {
     return Get.defaultDialog(
       title: 'Select Image Source',
+      titleStyle: TextStyle(
+        fontFamily: 'Plus Jakarta Sans',
+        fontSize: 16,
+        fontWeight: FontWeight.w600,
+      ),
       content: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFFE5BA73),
+            ),
             onPressed: () {
               Get.back();
               pickImageFromGallery();
             },
-            child: Text('Gallery'),
+            child: Text(
+              'Gallery',
+              style: TextStyle(
+                fontFamily: 'Plus Jakarta Sans',
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: Colors.black,
+              ),
+            ),
           ),
           SizedBox(width: 20),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              backgroundColor: Color(0xFFE5BA73),
+            ),
             onPressed: () {
               Get.back();
               pickImageFromCamera();
             },
-            child: Text('Camera'),
+            child: Text(
+              'Camera',
+              style: TextStyle(
+                fontFamily: 'Plus Jakarta Sans',
+                fontSize: 14,
+                fontWeight: FontWeight.w400,
+                color: Colors.black,
+              ),
+            ),
           ),
         ],
       ),
