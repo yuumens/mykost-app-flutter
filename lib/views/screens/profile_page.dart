@@ -2,7 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:iconly/iconly.dart';
+import 'package:my_kost_app/controller/profile_page_controller.dart';
+import 'package:my_kost_app/views/screens/image_add_picker.dart';
 
 class ProfilePage extends StatefulWidget {
   @override
@@ -10,15 +13,10 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  ProfilePageController controller = Get.put(ProfilePageController());
   @override
   Widget build(BuildContext context) {
-    bool _isPressed = false;
-
-    void _handleTap() {
-      setState(() {
-        _isPressed = !_isPressed;
-      });
-    }
+    final ProfilePageController profilePageController = Get.find();
 
     return Scaffold(
       body: Container(
@@ -84,7 +82,9 @@ class _ProfilePageState extends State<ProfilePage> {
                           child: Material(
                             child: InkWell(
                               onTap: () => setState(() {
-                                _isPressed ? Colors.black : Color(0xFFC58940);
+                                Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => ImagePickerPage()));
+                                profilePageController.isPressedClick();
                               }),
                               child: Ink(
                                 color: Color(0xFFFAEAB1),
@@ -129,9 +129,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                     child: InkWell(
                                       onTap: () => setState(
                                         () {
-                                          _isPressed
-                                              ? Colors.black
-                                              : Color(0xFFC58940);
+                                          profilePageController
+                                              .isPressedClick();
                                         },
                                       ),
                                       child: Ink(
@@ -195,9 +194,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                     child: InkWell(
                                       onTap: () => setState(
                                         () {
-                                          _isPressed
-                                              ? Colors.black
-                                              : Color(0xFFC58940);
+                                          profilePageController
+                                              .isPressedClick();
                                         },
                                       ),
                                       child: Ink(
@@ -261,9 +259,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                     child: InkWell(
                                       onTap: () => setState(
                                         () {
-                                          _isPressed
-                                              ? Colors.black
-                                              : Color(0xFFC58940);
+                                          profilePageController
+                                              .isPressedClick();
                                         },
                                       ),
                                       child: Ink(
@@ -327,9 +324,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                     child: InkWell(
                                       onTap: () => setState(
                                         () {
-                                          _isPressed
-                                              ? Colors.black
-                                              : Color(0xFFC58940);
+                                          profilePageController
+                                              .isPressedClick();
                                         },
                                       ),
                                       child: Ink(
@@ -393,9 +389,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                     child: InkWell(
                                       onTap: () => setState(
                                         () {
-                                          _isPressed
-                                              ? Colors.black
-                                              : Color(0xFFC58940);
+                                          profilePageController
+                                              .isPressedClick();
                                         },
                                       ),
                                       child: Ink(
@@ -459,9 +454,8 @@ class _ProfilePageState extends State<ProfilePage> {
                                     child: InkWell(
                                       onTap: () => setState(
                                         () {
-                                          _isPressed
-                                              ? Colors.black
-                                              : Color(0xFFC58940);
+                                          profilePageController
+                                              .isPressedClick();
                                         },
                                       ),
                                       child: Ink(
