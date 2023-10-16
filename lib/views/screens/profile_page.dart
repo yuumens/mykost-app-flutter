@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers, no_leading_underscores_for_local_identifiers, unused_element
 
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:iconly/iconly.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -112,341 +113,414 @@ class _ProfilePageState extends State<ProfilePage> {
                   ],
                 ),
               ),
-              Container(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+              Expanded(
+                child: ListView(
                   children: [
                     Column(
                       children: [
-                        SizedBox(
-                          height: 20,
-                        ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Material(
-                            child: InkWell(
-                              onTap: () => setState(
-                                () {
-                                  _isPressed ? Colors.black : Color(0xFFC58940);
-                                },
-                              ),
-                              child: Ink(
-                                color: Color(0xFFF5EFE6),
-                                width: 320,
-                                height: 50,
-                                child: Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.person,
-                                        color: Color(0xFFC58940),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Column(
+                              children: [
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Material(
+                                    child: InkWell(
+                                      onTap: () => setState(
+                                        () {
+                                          _isPressed
+                                              ? Colors.black
+                                              : Color(0xFFC58940);
+                                        },
                                       ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Text(
-                                        'Account Information',
-                                        style: TextStyle(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
+                                      child: Ink(
+                                        color: Color(0xFFF5EFE6),
+                                        width: 320,
+                                        height: 50,
+                                        child: Container(
+                                          padding: EdgeInsets.all(10),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Icon(
+                                                Icons.person,
+                                                color: Color(0xFFC58940),
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Account Information',
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          'Plus Jakarta Sans',
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                width: 80,
+                                              ),
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                children: [
+                                                  Icon(
+                                                    IconlyLight.arrow_right_2,
+                                                    color: Color(0xFFE5BA73),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                      SizedBox(
-                                        width: 120,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Icon(
-                                            IconlyLight.arrow_right_2,
-                                            color: Color(0xFFE5BA73),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Material(
-                            child: InkWell(
-                              onTap: () => setState(
-                                () {
-                                  _isPressed ? Colors.black : Color(0xFFC58940);
-                                },
-                              ),
-                              child: Ink(
-                                color: Color(0xFFF5EFE6),
-                                width: 320,
-                                height: 50,
-                                child: Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.person,
-                                        color: Color(0xFFC58940),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Material(
+                                    child: InkWell(
+                                      onTap: () => setState(
+                                        () {
+                                          _isPressed
+                                              ? Colors.black
+                                              : Color(0xFFC58940);
+                                        },
                                       ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Text(
-                                        'Account Information',
-                                        style: TextStyle(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
+                                      child: Ink(
+                                        color: Color(0xFFF5EFE6),
+                                        width: 320,
+                                        height: 50,
+                                        child: Container(
+                                          padding: EdgeInsets.all(10),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Icon(
+                                                FontAwesomeIcons.clipboardList,
+                                                color: Color(0xFFC58940),
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'My Order',
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          'Plus Jakarta Sans',
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                width: 155,
+                                              ),
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                children: [
+                                                  Icon(
+                                                    IconlyLight.arrow_right_2,
+                                                    color: Color(0xFFE5BA73),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                      SizedBox(
-                                        width: 120,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Icon(
-                                            IconlyLight.arrow_right_2,
-                                            color: Color(0xFFE5BA73),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Material(
-                            child: InkWell(
-                              onTap: () => setState(
-                                () {
-                                  _isPressed ? Colors.black : Color(0xFFC58940);
-                                },
-                              ),
-                              child: Ink(
-                                color: Color(0xFFF5EFE6),
-                                width: 320,
-                                height: 50,
-                                child: Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.person,
-                                        color: Color(0xFFC58940),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Material(
+                                    child: InkWell(
+                                      onTap: () => setState(
+                                        () {
+                                          _isPressed
+                                              ? Colors.black
+                                              : Color(0xFFC58940);
+                                        },
                                       ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Text(
-                                        'Account Information',
-                                        style: TextStyle(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
+                                      child: Ink(
+                                        color: Color(0xFFF5EFE6),
+                                        width: 320,
+                                        height: 50,
+                                        child: Container(
+                                          padding: EdgeInsets.all(10),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Icon(
+                                                FontAwesomeIcons.solidBell,
+                                                color: Color(0xFFC58940),
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Notifications',
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          'Plus Jakarta Sans',
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                width: 133,
+                                              ),
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                children: [
+                                                  Icon(
+                                                    IconlyLight.arrow_right_2,
+                                                    color: Color(0xFFE5BA73),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                      SizedBox(
-                                        width: 120,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Icon(
-                                            IconlyLight.arrow_right_2,
-                                            color: Color(0xFFE5BA73),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Material(
-                            child: InkWell(
-                              onTap: () => setState(
-                                () {
-                                  _isPressed ? Colors.black : Color(0xFFC58940);
-                                },
-                              ),
-                              child: Ink(
-                                color: Color(0xFFF5EFE6),
-                                width: 320,
-                                height: 50,
-                                child: Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.person,
-                                        color: Color(0xFFC58940),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Material(
+                                    child: InkWell(
+                                      onTap: () => setState(
+                                        () {
+                                          _isPressed
+                                              ? Colors.black
+                                              : Color(0xFFC58940);
+                                        },
                                       ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Text(
-                                        'Account Information',
-                                        style: TextStyle(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
+                                      child: Ink(
+                                        color: Color(0xFFF5EFE6),
+                                        width: 320,
+                                        height: 50,
+                                        child: Container(
+                                          padding: EdgeInsets.all(10),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Icon(
+                                                Icons.question_mark_sharp,
+                                                color: Color(0xFFC58940),
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Support',
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          'Plus Jakarta Sans',
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                width: 165,
+                                              ),
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                children: [
+                                                  Icon(
+                                                    IconlyLight.arrow_right_2,
+                                                    color: Color(0xFFE5BA73),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                      SizedBox(
-                                        width: 120,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Icon(
-                                            IconlyLight.arrow_right_2,
-                                            color: Color(0xFFE5BA73),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Material(
-                            child: InkWell(
-                              onTap: () => setState(
-                                () {
-                                  _isPressed ? Colors.black : Color(0xFFC58940);
-                                },
-                              ),
-                              child: Ink(
-                                color: Color(0xFFF5EFE6),
-                                width: 320,
-                                height: 50,
-                                child: Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.person,
-                                        color: Color(0xFFC58940),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Material(
+                                    child: InkWell(
+                                      onTap: () => setState(
+                                        () {
+                                          _isPressed
+                                              ? Colors.black
+                                              : Color(0xFFC58940);
+                                        },
                                       ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Text(
-                                        'Account Information',
-                                        style: TextStyle(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
+                                      child: Ink(
+                                        color: Color(0xFFF5EFE6),
+                                        width: 320,
+                                        height: 50,
+                                        child: Container(
+                                          padding: EdgeInsets.all(10),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Icon(
+                                                IconlyBold.shield_done,
+                                                color: Color(0xFFC58940),
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Privacy and Policy',
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          'Plus Jakarta Sans',
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                width: 100,
+                                              ),
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                children: [
+                                                  Icon(
+                                                    IconlyLight.arrow_right_2,
+                                                    color: Color(0xFFE5BA73),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                      SizedBox(
-                                        width: 120,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Icon(
-                                            IconlyLight.arrow_right_2,
-                                            color: Color(0xFFE5BA73),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(10),
-                          child: Material(
-                            child: InkWell(
-                              onTap: () => setState(
-                                () {
-                                  _isPressed ? Colors.black : Color(0xFFC58940);
-                                },
-                              ),
-                              child: Ink(
-                                color: Color(0xFFF5EFE6),
-                                width: 320,
-                                height: 50,
-                                child: Container(
-                                  padding: EdgeInsets.all(10),
-                                  child: Row(
-                                    children: [
-                                      Icon(
-                                        Icons.person,
-                                        color: Color(0xFFC58940),
+                                SizedBox(
+                                  height: 15,
+                                ),
+                                ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Material(
+                                    child: InkWell(
+                                      onTap: () => setState(
+                                        () {
+                                          _isPressed
+                                              ? Colors.black
+                                              : Color(0xFFC58940);
+                                        },
                                       ),
-                                      SizedBox(
-                                        width: 10,
-                                      ),
-                                      Text(
-                                        'Account Information',
-                                        style: TextStyle(
-                                          fontFamily: 'Plus Jakarta Sans',
-                                          fontSize: 14,
-                                          fontWeight: FontWeight.w600,
+                                      child: Ink(
+                                        color: Color(0xFFF5EFE6),
+                                        width: 320,
+                                        height: 50,
+                                        child: Container(
+                                          padding: EdgeInsets.all(10),
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceBetween,
+                                            children: [
+                                              Icon(
+                                                IconlyLight.logout,
+                                                color: Color.fromARGB(
+                                                    255, 255, 0, 0),
+                                              ),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    'Log Out',
+                                                    style: TextStyle(
+                                                      fontFamily:
+                                                          'Plus Jakarta Sans',
+                                                      fontSize: 14,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                      color: Colors.red,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              SizedBox(
+                                                width: 155,
+                                              ),
+                                              Row(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.end,
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.end,
+                                                children: [
+                                                  Icon(
+                                                    IconlyLight.arrow_right_2,
+                                                    color: Color(0xFFE5BA73),
+                                                  ),
+                                                ],
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       ),
-                                      SizedBox(
-                                        width: 120,
-                                      ),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.end,
-                                        children: [
-                                          Icon(
-                                            IconlyLight.arrow_right_2,
-                                            color: Color(0xFFE5BA73),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
+                                    ),
                                   ),
                                 ),
-                              ),
+                              ],
                             ),
-                          ),
+                          ],
                         ),
                       ],
                     ),
